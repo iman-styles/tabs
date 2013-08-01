@@ -1,0 +1,88 @@
+@function tabs-image-url($path) {
+  @return component-url('nib-styles-common', "local/tabs/images/#{$path}");
+}
+
+$tab-radius: 10px;
+
+.tabs {
+  @include clear-floats;
+  position: relative;
+  z-index: 1;
+
+  &:after {
+    background: #ccc;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  &.tabs--six {
+    .tabs__tab {
+      width: 16.667%;
+    }
+  }
+
+  &.tabs--four {
+    .tabs__tab {
+      width: 25%;
+    }
+  }
+
+  &.tabs--two {
+    .tabs__tab {
+      width: 50%;
+    }
+  }
+
+  .tabs__tab {
+    float: left;
+    width: 25%;
+
+    &:first-child {
+      a {
+        margin-left: 0;
+      }
+    }
+
+    &:last-child {
+      a {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      @include improve-text-rendering;
+      background: #eee;
+      border: 1px solid #d6d6d6;
+      border-bottom: none;
+      color: #888;
+      display: block;
+      font-family: $font-family-roboto;
+      margin: 0 1px;
+      outline: none;
+      outline: none;
+      padding: $spacing-small $spacing-normal;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+
+      &:hover {
+        background: #fcfcfc;
+        color: $grey-darkest;
+        cursor: pointer;
+      }
+    }
+
+    &.is-selected a {
+      background: #fff;
+      border-color: #ccc;
+      color: $grey-darkest;
+      cursor: pointer;
+      z-index: 5;
+    }
+  }
+}
