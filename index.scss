@@ -1,9 +1,3 @@
-@function tabs-image-url($path) {
-  @return component-url('nib-styles-common', "local/tabs/images/#{$path}");
-}
-
-$tab-radius: 10px;
-
 .tabs {
   @include clear-floats;
   position: relative;
