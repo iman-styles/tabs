@@ -21,6 +21,12 @@
     }
   }
 
+  &.tabs--five {
+    .tabs__tab {
+      width: 20%;
+    }
+  }
+
   &.tabs--four {
     .tabs__tab {
       width: 25%;
